@@ -8,19 +8,19 @@ class Person {
         this.family = [];
        
     }
-
-    toString() {
-        return this.fullName() + ', Favorite Color: ' + this.favoriteColor + ', Favorite Number: ' + this.favoriteNumber;
-    }
 }
 let neal = new Person('Neal', 'deGrasse Tyson', 'Green', 4, ['broccoli', 'tomato', 'fries'])
-
+let fam = new Person;
 Person.prototype.fullName = function () {
     return this.firstName + ' ' + this.lastName;
 }
 Person.prototype.addToFamily = function(fam) {
     return this.family.push(fam);
  }
+
+Person.prototype.toString = function () {
+    return this.fullName() + ', Favorite Color: ' + this.favoriteColor + ', Favorite Number: ' + this.favoriteNumber;
+}
 
 console.log(neal.fullName());
 
@@ -36,7 +36,7 @@ console.log(neal.addToFamily('Peter'));
 
 console.log(neal.family);
 
-
+console.log(fam instanceof Person);
 
 
 
