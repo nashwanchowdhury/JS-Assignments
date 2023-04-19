@@ -57,71 +57,68 @@ else if (win1) {
 }
 };
 
+//playRound(player1, player2);
+
 function playGame (p1, p2, playUntil) {
     if (score1 == playUntil) {
+        console.log(p1.name + " wins the best of 5!");
         score2 = 0;
         score1 = 0;
         p1.winner = true; 
-        return p1.name + " wins the best of 5!";
     } else if (score2 == playUntil) {
+        console.log(p2.name + " wins the best of 5!");
         score2 = 0;
         score1 = 0;
         p2.winner = true; 
-        return p2.name + " wins the best of 5!";
     } else {
         playRound(p1, p2);
         playGame(p1, p2, playUntil);
     }
 
 }
-    
+//playGame(player1, player2, 5);
 function playTournament (p1, p2, p3, p4, playUntil) {
     
     playGame(p1, p2, playUntil);
     playGame(p3, p4, playUntil);
-    
+   
     if (p1.winner == true && p3.winner == true) {
         p1.winner = false;
         p2.winner = false;
         p3.winner = false;
         p4.winner = false; 
-        document.getElementById("round3").innerHTML = p1.name + ' and ' + p3.name + ' advance to the next round!'
         playGame(p1, p3, playUntil);
     } else if (p1.winner == true && p4.winner == true) {
         p1.winner = false;
         p2.winner = false;
         p3.winner = false;
         p4.winner = false;
-        document.getElementById("round3").innerHTML = p1.name + ' and ' + p4.name + ' advance to the next round!'
         playGame(p1, p4, playUntil);
     } else if (p2.winner == true && p3.winner == true) {
         p1.winner = false;
         p2.winner = false;
         p3.winner = false;
-        p4.winner = false;
-        document.getElementById("round3").innerHTML = p2.name + ' and ' + p3.name + ' advance to the next round!' 
+        p4.winner = false; 
         playGame(p2, p3, playUntil);
     } else {
         p1.winner = false;
         p2.winner = false;
         p3.winner = false; 
         p4.winner = false; 
-        document.getElementById("round3").innerHTML = p2.name + ' and ' + p4.name + ' advance to the next round!';
         playGame(p2, p4, playUntil);
     }
-    
+
     if (p1.winner == true) {
-        document.getElementById("winner").innerHTML = p1.name + ' is the world champion!'
+        console.log(p1.name + ' is the world champion!')
     } else if (p2.winner == true) {
-        document.getElementById("winner").innerHTML = p2.name + ' is the world champion!'
+        console.log(p2.name + ' is the world champion!')
     } else if (p3.winner == true) {
-        document.getElementById("winner").innerHTML = p3.name + ' is the world champion!'
+        console.log(p3.name + ' is the world champion!')
     } else if (p4.winner == true) {
-        document.getElementById("winner").innerHTML = p4.name + ' is the world champion!'
-    } else {}
-        
+        console.log(p4.name + ' is the world champion!')
+    } else 
+        return 1;
 
 }
 
-//playTournament(player1, player2, player3, player4, 5);
-
+playTournament(player1, player2, player3, player4, 5);
