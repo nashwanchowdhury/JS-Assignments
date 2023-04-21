@@ -35,26 +35,26 @@ function display(data) {
     let date = new Date();
     let datee = date.toDateString();
     document.getElementById('currentDate').innerHTML = 'Current Date: ' + datee;
-    console.log(date);
     let currentTemp = data.main.temp;
     document.getElementById('currentTemp').innerHTML = 'Current Temp: ' + currentTemp + ' \xB0F';
-    console.log(currentTemp);
+    let feelsLike = data.main.feels_like;
+    document.getElementById('feelsLike').innerHTML = 'Feels Like: ' + feelsLike + ' \xB0F'; 
     let city = data.name;
     document.getElementById('currentCity').innerHTML = 'City: ' + city;
-    console.log(city);
     let currentConditions = data.weather[0].description;
     let currentConditions2 = currentConditions.charAt(0).toUpperCase() + currentConditions.slice(1);
     document.getElementById('currentCond').innerHTML = 'Current Conditions: ' + currentConditions2;
-    console.log(currentConditions);
+    let humidity = data.main.humidity;
+    document.getElementById('humidity').innerHTML = 'Humidity: ' + humidity + ' \xB0F';
     let tempHi = data.main.temp_max;
-    document.getElementById('currentTempHi').innerHTML = 'Current Temp Hi: ' + tempHi + ' \xB0F';
-    console.log(tempHi);
+    document.getElementById('currentTempHi').innerHTML = 'Current Temp Highs: ' + tempHi + ' \xB0F';
     let tempLo = data.main.temp_min;
-    document.getElementById('currentTempLo').innerHTML = 'Current Temp Lo: ' + tempLo + ' \xB0F';
-    console.log(tempLo);
+    document.getElementById('currentTempLo').innerHTML = 'Current Temp Lows: ' + tempLo + ' \xB0F';
 }
 
-
-
+function celsius () {
+   
+}
+    
 
 
