@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="allPosts" type="submit" onclick="getallPosts()">Get All Posts</button>
+    <br>
+    <button id="Postid10" type="submit" onclick="getPost10ID()">Get post with id of 10</button>
+    <br>
+    <button id="create" type="submit" onclick="createPost()">Create a new post and log the id generated for it by the server</button>
+    <br>
+    <button id="replace" type="submit" onclick="replacePostID()">Replace the post with id of 12 and render the responseJSON</button>
+    <br>
+    <button id="update" type="submit" onclick="updatePostTitle()">Update the title of post with id of 12 and render responseJSON</button>
+    <br>
+    <button id="delete" type="submit" onclick="deletePost()">Delete the post with id of 12 and render a success message</button>
+    <p id="Posts"></p>
+    <script src="rest.js"></script>
+</body>
+</html>
