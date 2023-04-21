@@ -1,5 +1,14 @@
 let myArray = [];
 
+function initializeCart() {
+    if (localStorage.getItem('cart') === null) {
+        localStorage.setItem('cart', myArray);
+    } else {
+        
+     }
+ }
+initializeCart();
+
 function addCart() {
     let output = JSON.parse(localStorage.getItem('cart'))
     let itemName = document.getElementById('itemName').value;
@@ -11,15 +20,6 @@ function addCart() {
     output.push(a);
     localStorage.setItem('cart', JSON.stringify(output));   
 }
-
-function initializeCart() {
-    if (localStorage.getItem('cart') === null) {
-        localStorage.setItem('cart', myArray);
-    } else {
-        
-     }
- }
-initializeCart();
 
 function removeItem(x) {
     let output = JSON.parse(localStorage.getItem("cart"));

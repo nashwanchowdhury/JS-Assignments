@@ -27,6 +27,8 @@ id10 = fetch('http://jsonplaceholder.typicode.com/posts')
 .then((json) => document.getElementById('Posts').innerHTML = JSON.stringify(findID(10, json)));
 }
 
+
+
 // //Create a new post and log the id generated for it by the server
 function createPost() {
 document.getElementById('Posts').innerHTML = ''
